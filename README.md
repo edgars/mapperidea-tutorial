@@ -139,7 +139,7 @@ Com isto, o mapperidea (mas ou menos como o git), saberá que você está está 
 Vamos até o diretório src, que está no mesmo nível do mdm, e digite o seguinte comando:
 
     mapperidea generate projeto_helloworld swagger listPackages > genApi.sh
-                        [nome projeto  ] [gerador] [opcao] > arquivo de saída
+                        [nome projeto  ] [linguagem] [generator] > arquivo de saída
 
 ![geradores](https://github.com/edgars/mapperidea-tutorial/raw/master/img/figura3.png)
 
