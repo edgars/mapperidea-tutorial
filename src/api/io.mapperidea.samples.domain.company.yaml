@@ -1,0 +1,1263 @@
+swagger: '2.0'
+info:
+  version: v1
+  title: Mapperidea generated API samplecompany
+  description: API para integração pacote company
+host: api.sample.mapperidea.io
+schemes:
+  - https
+basePath: /company
+paths:
+  /Company:
+    get:
+      operationId: "Company_listAll"
+      summary: Lista todos os registros de Company.
+      tags:
+        - Company
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "identifier"
+        in: "query"
+        description: "Filtra registros por identifier"
+        type: string
+      - name: "businessName"
+        in: "query"
+        description: "Filtra registros por businessName"
+        type: string
+      - name: "catalogCompanyType.id"
+        in: "query"
+        description: "Filtra registros por catalogCompanyType.id"
+        type: integer
+      - name: "domainName"
+        in: "query"
+        description: "Filtra registros por domainName"
+        type: string
+      - name: "status"
+        in: "query"
+        description: "Filtra registros por status"
+        type: string
+      - name: "logon"
+        in: "query"
+        description: "Filtra registros por logon"
+        type: string
+      - name: "valid"
+        in: "query"
+        description: "Filtra registros por valid"
+        type: integer
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Company'
+    post:
+      operationId: "Company_create"
+      summary: Cria um registro de Company.
+      tags:
+        - Company
+      consumes:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Request body"
+        required: true
+        schema:
+              $ref: '#/definitions/Company'
+      responses:
+        '200':
+          description: OK
+          schema:
+              $ref: '#/definitions/Company'
+  /Company/count:
+    get:
+      operationId: "Company_count"
+      summary: Retorna contagem dos registros de Company.
+      tags:
+        - Company
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "identifier"
+        in: "query"
+        description: "Filtra registros por identifier"
+        type: string
+      - name: "businessName"
+        in: "query"
+        description: "Filtra registros por businessName"
+        type: string
+      - name: "catalogCompanyType.id"
+        in: "query"
+        description: "Filtra registros por catalogCompanyType.id"
+        type: integer
+      - name: "domainName"
+        in: "query"
+        description: "Filtra registros por domainName"
+        type: string
+      - name: "status"
+        in: "query"
+        description: "Filtra registros por status"
+        type: string
+      - name: "logon"
+        in: "query"
+        description: "Filtra registros por logon"
+        type: string
+      - name: "valid"
+        in: "query"
+        description: "Filtra registros por valid"
+        type: integer
+      produces:
+      - "application/json"
+      responses: 
+        '200': 
+          description: OK 
+          schema: 
+              $ref: '#/definitions/CountResult' 
+  /Company/max/{campo}:
+    get:
+      operationId: "Company_max"
+      summary: Retorna o valor máximo do campo dos registros de Company.
+      tags:
+        - Company
+      parameters:
+      - name: "campo"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "identifier"
+        in: "query"
+        description: "Filtra registros por identifier"
+        type: string
+      - name: "businessName"
+        in: "query"
+        description: "Filtra registros por businessName"
+        type: string
+      - name: "catalogCompanyType.id"
+        in: "query"
+        description: "Filtra registros por catalogCompanyType.id"
+        type: integer
+      - name: "domainName"
+        in: "query"
+        description: "Filtra registros por domainName"
+        type: string
+      - name: "status"
+        in: "query"
+        description: "Filtra registros por status"
+        type: string
+      - name: "logon"
+        in: "query"
+        description: "Filtra registros por logon"
+        type: string
+      - name: "valid"
+        in: "query"
+        description: "Filtra registros por valid"
+        type: integer
+      produces:
+      - "application/json"
+      responses:  
+        '200':  
+          description: OK  
+          schema:  
+              $ref: '#/definitions/MaxResult'  
+  /Company/sum/{campo}:
+    get: 
+      operationId: "Company_sum" 
+      summary: Retorna a soma do campo dos registros de Company.
+      tags:
+        - Company
+      parameters: 
+      - name: "campo" 
+        in: "path" 
+        required: true 
+        type: "string" 
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "identifier"
+        in: "query"
+        description: "Filtra registros por identifier"
+        type: string
+      - name: "businessName"
+        in: "query"
+        description: "Filtra registros por businessName"
+        type: string
+      - name: "catalogCompanyType.id"
+        in: "query"
+        description: "Filtra registros por catalogCompanyType.id"
+        type: integer
+      - name: "domainName"
+        in: "query"
+        description: "Filtra registros por domainName"
+        type: string
+      - name: "status"
+        in: "query"
+        description: "Filtra registros por status"
+        type: string
+      - name: "logon"
+        in: "query"
+        description: "Filtra registros por logon"
+        type: string
+      - name: "valid"
+        in: "query"
+        description: "Filtra registros por valid"
+        type: integer
+      produces:
+      - "application/json"
+      responses:   
+        '200':   
+          description: OK   
+          schema:   
+              $ref: '#/definitions/SumResult'   
+  /Company/{from}/{to}:
+    get:
+      operationId: "Company_listRange"
+      summary: Lista os registros de Company por faixa de posição.
+      tags:
+        - Company
+      parameters:
+      - name: "from"
+        in: "path"
+        required: true
+        type: "integer"
+      - name: "to"
+        in: "path"
+        required: true
+        type: "integer"
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "identifier"
+        in: "query"
+        description: "Filtra registros por identifier"
+        type: string
+      - name: "businessName"
+        in: "query"
+        description: "Filtra registros por businessName"
+        type: string
+      - name: "catalogCompanyType.id"
+        in: "query"
+        description: "Filtra registros por catalogCompanyType.id"
+        type: integer
+      - name: "domainName"
+        in: "query"
+        description: "Filtra registros por domainName"
+        type: string
+      - name: "status"
+        in: "query"
+        description: "Filtra registros por status"
+        type: string
+      - name: "logon"
+        in: "query"
+        description: "Filtra registros por logon"
+        type: string
+      - name: "valid"
+        in: "query"
+        description: "Filtra registros por valid"
+        type: integer
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Company'
+  /Company/{id}:
+    get:
+      operationId: "Company_read"
+      summary: Retorna o respectivo registro de Company.
+      tags:
+        - Company
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/Company'
+    post:
+      operationId: "Company_update" 
+      summary: Altera o respectivo registro de Company.
+      tags:
+        - Company
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "body"
+        description: "Request body"
+        required: true
+        schema:
+          $ref: '#/definitions/Company'
+      responses:
+        '200':
+          description: OK
+    delete:
+      operationId: "Company_delete"  
+      summary: Remove o respectivo registro de Company.
+      tags:
+        - Company
+      parameters: 
+      - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+      responses:
+        '200':
+          description: OK
+  /Company/distinct/catalogCompanyType:
+    get:
+      operationId: "Company_catalogCompanyType_distinct"
+      summary: List all records of Company referenced by field catalogCompanyType.
+      tags:
+        - Company
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "identifier"
+        in: "query"
+        description: "Filtra registros por identifier"
+        type: string
+      - name: "businessName"
+        in: "query"
+        description: "Filtra registros por businessName"
+        type: string
+      - name: "catalogCompanyType.id"
+        in: "query"
+        description: "Filtra registros por catalogCompanyType.id"
+        type: integer
+      - name: "domainName"
+        in: "query"
+        description: "Filtra registros por domainName"
+        type: string
+      - name: "status"
+        in: "query"
+        description: "Filtra registros por status"
+        type: string
+      - name: "logon"
+        in: "query"
+        description: "Filtra registros por logon"
+        type: string
+      - name: "valid"
+        in: "query"
+        description: "Filtra registros por valid"
+        type: integer
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/CompanyType'
+  /Company/distinct/catalogCompanyType/count:
+    get:
+      operationId: "Company_catalogCompanyType_distinctCount"
+      summary: Retorna a contagem dos registros de Company referenciados pelo campo catalogCompanyType.
+      tags:
+        - Company
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "identifier"
+        in: "query"
+        description: "Filtra registros por identifier"
+        type: string
+      - name: "businessName"
+        in: "query"
+        description: "Filtra registros por businessName"
+        type: string
+      - name: "catalogCompanyType.id"
+        in: "query"
+        description: "Filtra registros por catalogCompanyType.id"
+        type: integer
+      - name: "domainName"
+        in: "query"
+        description: "Filtra registros por domainName"
+        type: string
+      - name: "status"
+        in: "query"
+        description: "Filtra registros por status"
+        type: string
+      - name: "logon"
+        in: "query"
+        description: "Filtra registros por logon"
+        type: string
+      - name: "valid"
+        in: "query"
+        description: "Filtra registros por valid"
+        type: integer
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CountResult'
+###################################
+  /CompanyType:
+    get:
+      operationId: "CompanyType_listAll"
+      summary: Lista todos os registros de CompanyType.
+      tags:
+        - CompanyType
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "name"
+        in: "query"
+        description: "Filtra registros por name"
+        type: string
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/CompanyType'
+    post:
+      operationId: "CompanyType_create"
+      summary: Cria um registro de CompanyType.
+      tags:
+        - CompanyType
+      consumes:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Request body"
+        required: true
+        schema:
+              $ref: '#/definitions/CompanyType'
+      responses:
+        '200':
+          description: OK
+          schema:
+              $ref: '#/definitions/CompanyType'
+  /CompanyType/count:
+    get:
+      operationId: "CompanyType_count"
+      summary: Retorna contagem dos registros de CompanyType.
+      tags:
+        - CompanyType
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "name"
+        in: "query"
+        description: "Filtra registros por name"
+        type: string
+      produces:
+      - "application/json"
+      responses: 
+        '200': 
+          description: OK 
+          schema: 
+              $ref: '#/definitions/CountResult' 
+  /CompanyType/max/{campo}:
+    get:
+      operationId: "CompanyType_max"
+      summary: Retorna o valor máximo do campo dos registros de CompanyType.
+      tags:
+        - CompanyType
+      parameters:
+      - name: "campo"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "name"
+        in: "query"
+        description: "Filtra registros por name"
+        type: string
+      produces:
+      - "application/json"
+      responses:  
+        '200':  
+          description: OK  
+          schema:  
+              $ref: '#/definitions/MaxResult'  
+  /CompanyType/sum/{campo}:
+    get: 
+      operationId: "CompanyType_sum" 
+      summary: Retorna a soma do campo dos registros de CompanyType.
+      tags:
+        - CompanyType
+      parameters: 
+      - name: "campo" 
+        in: "path" 
+        required: true 
+        type: "string" 
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "name"
+        in: "query"
+        description: "Filtra registros por name"
+        type: string
+      produces:
+      - "application/json"
+      responses:   
+        '200':   
+          description: OK   
+          schema:   
+              $ref: '#/definitions/SumResult'   
+  /CompanyType/{from}/{to}:
+    get:
+      operationId: "CompanyType_listRange"
+      summary: Lista os registros de CompanyType por faixa de posição.
+      tags:
+        - CompanyType
+      parameters:
+      - name: "from"
+        in: "path"
+        required: true
+        type: "integer"
+      - name: "to"
+        in: "path"
+        required: true
+        type: "integer"
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "name"
+        in: "query"
+        description: "Filtra registros por name"
+        type: string
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/CompanyType'
+  /CompanyType/{id}:
+    get:
+      operationId: "CompanyType_read"
+      summary: Retorna o respectivo registro de CompanyType.
+      tags:
+        - CompanyType
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CompanyType'
+    post:
+      operationId: "CompanyType_update" 
+      summary: Altera o respectivo registro de CompanyType.
+      tags:
+        - CompanyType
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "body"
+        description: "Request body"
+        required: true
+        schema:
+          $ref: '#/definitions/CompanyType'
+      responses:
+        '200':
+          description: OK
+    delete:
+      operationId: "CompanyType_delete"  
+      summary: Remove o respectivo registro de CompanyType.
+      tags:
+        - CompanyType
+      parameters: 
+      - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+      responses:
+        '200':
+          description: OK
+###################################
+  /CostCenter:
+    get:
+      operationId: "CostCenter_listAll"
+      summary: Lista todos os registros de CostCenter.
+      tags:
+        - CostCenter
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "name"
+        in: "query"
+        description: "Filtra registros por name"
+        type: string
+      - name: "status"
+        in: "query"
+        description: "Filtra registros por status"
+        type: string
+      - name: "valid"
+        in: "query"
+        description: "Filtra registros por valid"
+        type: integer
+      - name: "filter"
+        in: "query"
+        description: "Filtra registros por filter"
+        type: string
+      - name: "parent.id"
+        in: "query"
+        description: "Filtra registros por parent.id"
+        type: integer
+      - name: "company.id"
+        in: "query"
+        description: "Filtra registros por company.id"
+        type: integer
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/CostCenter'
+    post:
+      operationId: "CostCenter_create"
+      summary: Cria um registro de CostCenter.
+      tags:
+        - CostCenter
+      consumes:
+      - "application/json"
+      parameters:
+      - in: "body"
+        name: "body"
+        description: "Request body"
+        required: true
+        schema:
+              $ref: '#/definitions/CostCenter'
+      responses:
+        '200':
+          description: OK
+          schema:
+              $ref: '#/definitions/CostCenter'
+  /CostCenter/count:
+    get:
+      operationId: "CostCenter_count"
+      summary: Retorna contagem dos registros de CostCenter.
+      tags:
+        - CostCenter
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "name"
+        in: "query"
+        description: "Filtra registros por name"
+        type: string
+      - name: "status"
+        in: "query"
+        description: "Filtra registros por status"
+        type: string
+      - name: "valid"
+        in: "query"
+        description: "Filtra registros por valid"
+        type: integer
+      - name: "filter"
+        in: "query"
+        description: "Filtra registros por filter"
+        type: string
+      - name: "parent.id"
+        in: "query"
+        description: "Filtra registros por parent.id"
+        type: integer
+      - name: "company.id"
+        in: "query"
+        description: "Filtra registros por company.id"
+        type: integer
+      produces:
+      - "application/json"
+      responses: 
+        '200': 
+          description: OK 
+          schema: 
+              $ref: '#/definitions/CountResult' 
+  /CostCenter/max/{campo}:
+    get:
+      operationId: "CostCenter_max"
+      summary: Retorna o valor máximo do campo dos registros de CostCenter.
+      tags:
+        - CostCenter
+      parameters:
+      - name: "campo"
+        in: "path"
+        required: true
+        type: "string"
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "name"
+        in: "query"
+        description: "Filtra registros por name"
+        type: string
+      - name: "status"
+        in: "query"
+        description: "Filtra registros por status"
+        type: string
+      - name: "valid"
+        in: "query"
+        description: "Filtra registros por valid"
+        type: integer
+      - name: "filter"
+        in: "query"
+        description: "Filtra registros por filter"
+        type: string
+      - name: "parent.id"
+        in: "query"
+        description: "Filtra registros por parent.id"
+        type: integer
+      - name: "company.id"
+        in: "query"
+        description: "Filtra registros por company.id"
+        type: integer
+      produces:
+      - "application/json"
+      responses:  
+        '200':  
+          description: OK  
+          schema:  
+              $ref: '#/definitions/MaxResult'  
+  /CostCenter/sum/{campo}:
+    get: 
+      operationId: "CostCenter_sum" 
+      summary: Retorna a soma do campo dos registros de CostCenter.
+      tags:
+        - CostCenter
+      parameters: 
+      - name: "campo" 
+        in: "path" 
+        required: true 
+        type: "string" 
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "name"
+        in: "query"
+        description: "Filtra registros por name"
+        type: string
+      - name: "status"
+        in: "query"
+        description: "Filtra registros por status"
+        type: string
+      - name: "valid"
+        in: "query"
+        description: "Filtra registros por valid"
+        type: integer
+      - name: "filter"
+        in: "query"
+        description: "Filtra registros por filter"
+        type: string
+      - name: "parent.id"
+        in: "query"
+        description: "Filtra registros por parent.id"
+        type: integer
+      - name: "company.id"
+        in: "query"
+        description: "Filtra registros por company.id"
+        type: integer
+      produces:
+      - "application/json"
+      responses:   
+        '200':   
+          description: OK   
+          schema:   
+              $ref: '#/definitions/SumResult'   
+  /CostCenter/{from}/{to}:
+    get:
+      operationId: "CostCenter_listRange"
+      summary: Lista os registros de CostCenter por faixa de posição.
+      tags:
+        - CostCenter
+      parameters:
+      - name: "from"
+        in: "path"
+        required: true
+        type: "integer"
+      - name: "to"
+        in: "path"
+        required: true
+        type: "integer"
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "name"
+        in: "query"
+        description: "Filtra registros por name"
+        type: string
+      - name: "status"
+        in: "query"
+        description: "Filtra registros por status"
+        type: string
+      - name: "valid"
+        in: "query"
+        description: "Filtra registros por valid"
+        type: integer
+      - name: "filter"
+        in: "query"
+        description: "Filtra registros por filter"
+        type: string
+      - name: "parent.id"
+        in: "query"
+        description: "Filtra registros por parent.id"
+        type: integer
+      - name: "company.id"
+        in: "query"
+        description: "Filtra registros por company.id"
+        type: integer
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/CostCenter'
+  /CostCenter/{id}:
+    get:
+      operationId: "CostCenter_read"
+      summary: Retorna o respectivo registro de CostCenter.
+      tags:
+        - CostCenter
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CostCenter'
+    post:
+      operationId: "CostCenter_update" 
+      summary: Altera o respectivo registro de CostCenter.
+      tags:
+        - CostCenter
+      consumes:
+      - "application/json"
+      parameters:
+      - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+      - in: "body"
+        name: "body"
+        description: "Request body"
+        required: true
+        schema:
+          $ref: '#/definitions/CostCenter'
+      responses:
+        '200':
+          description: OK
+    delete:
+      operationId: "CostCenter_delete"  
+      summary: Remove o respectivo registro de CostCenter.
+      tags:
+        - CostCenter
+      parameters: 
+      - name: "id"
+        in: "path"
+        required: true
+        type: "integer"
+      responses:
+        '200':
+          description: OK
+  /CostCenter/distinct/parent:
+    get:
+      operationId: "CostCenter_parent_distinct"
+      summary: List all records of CostCenter referenced by field parent.
+      tags:
+        - CostCenter
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "name"
+        in: "query"
+        description: "Filtra registros por name"
+        type: string
+      - name: "status"
+        in: "query"
+        description: "Filtra registros por status"
+        type: string
+      - name: "valid"
+        in: "query"
+        description: "Filtra registros por valid"
+        type: integer
+      - name: "filter"
+        in: "query"
+        description: "Filtra registros por filter"
+        type: string
+      - name: "parent.id"
+        in: "query"
+        description: "Filtra registros por parent.id"
+        type: integer
+      - name: "company.id"
+        in: "query"
+        description: "Filtra registros por company.id"
+        type: integer
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/CostCenter'
+  /CostCenter/distinct/parent/count:
+    get:
+      operationId: "CostCenter_parent_distinctCount"
+      summary: Retorna a contagem dos registros de CostCenter referenciados pelo campo parent.
+      tags:
+        - CostCenter
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "name"
+        in: "query"
+        description: "Filtra registros por name"
+        type: string
+      - name: "status"
+        in: "query"
+        description: "Filtra registros por status"
+        type: string
+      - name: "valid"
+        in: "query"
+        description: "Filtra registros por valid"
+        type: integer
+      - name: "filter"
+        in: "query"
+        description: "Filtra registros por filter"
+        type: string
+      - name: "parent.id"
+        in: "query"
+        description: "Filtra registros por parent.id"
+        type: integer
+      - name: "company.id"
+        in: "query"
+        description: "Filtra registros por company.id"
+        type: integer
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CountResult'
+  /CostCenter/distinct/company:
+    get:
+      operationId: "CostCenter_company_distinct"
+      summary: List all records of CostCenter referenced by field company.
+      tags:
+        - CostCenter
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "name"
+        in: "query"
+        description: "Filtra registros por name"
+        type: string
+      - name: "status"
+        in: "query"
+        description: "Filtra registros por status"
+        type: string
+      - name: "valid"
+        in: "query"
+        description: "Filtra registros por valid"
+        type: integer
+      - name: "filter"
+        in: "query"
+        description: "Filtra registros por filter"
+        type: string
+      - name: "parent.id"
+        in: "query"
+        description: "Filtra registros por parent.id"
+        type: integer
+      - name: "company.id"
+        in: "query"
+        description: "Filtra registros por company.id"
+        type: integer
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: OK
+          schema:
+            type: array
+            items:
+              $ref: '#/definitions/Company'
+  /CostCenter/distinct/company/count:
+    get:
+      operationId: "CostCenter_company_distinctCount"
+      summary: Retorna a contagem dos registros de CostCenter referenciados pelo campo company.
+      tags:
+        - CostCenter
+      parameters:
+      - name: "id"
+        in: "query"
+        description: "Filtra registros por id"
+        type: integer
+      - name: "code"
+        in: "query"
+        description: "Filtra registros por code"
+        type: string
+      - name: "name"
+        in: "query"
+        description: "Filtra registros por name"
+        type: string
+      - name: "status"
+        in: "query"
+        description: "Filtra registros por status"
+        type: string
+      - name: "valid"
+        in: "query"
+        description: "Filtra registros por valid"
+        type: integer
+      - name: "filter"
+        in: "query"
+        description: "Filtra registros por filter"
+        type: string
+      - name: "parent.id"
+        in: "query"
+        description: "Filtra registros por parent.id"
+        type: integer
+      - name: "company.id"
+        in: "query"
+        description: "Filtra registros por company.id"
+        type: integer
+      produces:
+      - "application/json"
+      responses:
+        '200':
+          description: OK
+          schema:
+            $ref: '#/definitions/CountResult'
+###################################
+definitions:
+  CountResult:
+    type: object
+    properties:
+      count:
+        type: integer
+  MaxResult:
+    type: object
+    properties:
+      max:
+        type: number
+  SumResult:
+    type: object
+    properties:
+      sum:
+        type: number
+  Company:
+    type: object
+    properties:
+      id:
+        type: integer
+      code:
+        type: string
+        maxLength: 20
+      identifier:
+        type: string
+        maxLength: 20
+      businessName:
+        type: string
+        maxLength: 100
+      catalogCompanyType:
+        $ref: '#/definitions/CompanyType'
+      domainName:
+        type: string
+        maxLength: 50
+      status:
+        type: string
+        maxLength: 20
+      logon:
+        type: string
+        maxLength: 100
+      valid:
+        type: integer
+  CompanyType:
+    type: object
+    properties:
+      id:
+        type: integer
+      code:
+        type: string
+        maxLength: 20
+      name:
+        type: string
+        maxLength: 100
+  CostCenter:
+    type: object
+    properties:
+      id:
+        type: integer
+      code:
+        type: string
+        maxLength: 20
+      name:
+        type: string
+        maxLength: 100
+      status:
+        type: string
+        maxLength: 1
+      valid:
+        type: integer
+      filter:
+        type: string
+        maxLength: 1000
+      parent:
+        $ref: '#/definitions/CostCenter'
+      company:
+        $ref: '#/definitions/Company'
