@@ -149,6 +149,20 @@ Depois do chmod a+x no arquivo, pode executar o arquivo `./genAPI.sh`:
 
 O resultado irá criar o seu arquivo .yaml com a definição do Swagger. 
 
+## 5 - Resultado
+
+Veja o Swagger gerado:
+
+![geradores](https://github.com/edgars/mapperidea-tutorial/raw/master/img/figura4.png)
+
+## Testando no 42Crunch 
+
+ - [ ] To-Do - Para ser atualizado
+
+## Conclusão
+
+Gostou? Peça seu trial em https://mapperidea.io 
+
 
 
 
